@@ -59,7 +59,6 @@ void SystemClock_Config(void);
 static UINT32 AppTaskCreate(void);
 static UINT32 Creat_LED_Task(void);
 static UINT32 Creat_Key_Task(void);
-
 static void LED_Task(void);
 static void Key_Task(void);
 /* USER CODE END PFP */
@@ -149,7 +148,7 @@ static void LED_Task(void)
   /* 任务都是一个无限循环，不能返回 */
 	while(1)
 	{
-		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);;      //LED1翻转
+		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);    //LED1翻转
 		printf("LED任务正在运行！\n");
 		LOS_TaskDelay(1000);	
 	}
